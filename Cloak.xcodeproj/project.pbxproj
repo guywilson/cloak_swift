@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,15 @@
 		E419EE362BA5E52E0095B808 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E419EE352BA5E52E0095B808 /* ContentView.swift */; };
 		E419EE382BA5E52F0095B808 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E419EE372BA5E52F0095B808 /* Assets.xcassets */; };
 		E419EE3B2BA5E52F0095B808 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E419EE3A2BA5E52F0095B808 /* Preview Assets.xcassets */; };
+		E419EE432BA6105E0095B808 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E419EE422BA6105E0095B808 /* ModelData.swift */; };
+		E419EE452BA737B40095B808 /* MenuHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E419EE442BA737B40095B808 /* MenuHandler.swift */; };
+		E419EE482BA74C7A0095B808 /* LZ77 in Frameworks */ = {isa = PBXBuildFile; productRef = E419EE472BA74C7A0095B808 /* LZ77 */; };
+		E419EE4A2BA74C7A0095B808 /* PNG in Frameworks */ = {isa = PBXBuildFile; productRef = E419EE492BA74C7A0095B808 /* PNG */; };
+		E419EE4C2BA74D5F0095B808 /* PNGHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E419EE4B2BA74D5F0095B808 /* PNGHandler.swift */; };
+		E419EE4E2BA869000095B808 /* PNGView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E419EE4D2BA869000095B808 /* PNGView.swift */; };
+		E419EE502BA87B0F0095B808 /* ImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E419EE4F2BA87B0F0095B808 /* ImageData.swift */; };
+		E419EE552BA8C3890095B808 /* FileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E419EE542BA8C3890095B808 /* FileData.swift */; };
+		E419EE582BA8C69A0095B808 /* FileHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E419EE572BA8C69A0095B808 /* FileHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +29,13 @@
 		E419EE372BA5E52F0095B808 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E419EE3A2BA5E52F0095B808 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E419EE3C2BA5E52F0095B808 /* Cloak.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Cloak.entitlements; sourceTree = "<group>"; };
+		E419EE422BA6105E0095B808 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		E419EE442BA737B40095B808 /* MenuHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHandler.swift; sourceTree = "<group>"; };
+		E419EE4B2BA74D5F0095B808 /* PNGHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNGHandler.swift; sourceTree = "<group>"; };
+		E419EE4D2BA869000095B808 /* PNGView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNGView.swift; sourceTree = "<group>"; };
+		E419EE4F2BA87B0F0095B808 /* ImageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageData.swift; sourceTree = "<group>"; };
+		E419EE542BA8C3890095B808 /* FileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileData.swift; sourceTree = "<group>"; };
+		E419EE572BA8C69A0095B808 /* FileHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +43,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E419EE4A2BA74C7A0095B808 /* PNG in Frameworks */,
+				E419EE482BA74C7A0095B808 /* LZ77 in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,8 +70,11 @@
 		E419EE322BA5E52E0095B808 /* Cloak */ = {
 			isa = PBXGroup;
 			children = (
+				E419EE562BA8C6790095B808 /* File */,
+				E419EE532BA8881C0095B808 /* PNG */,
+				E419EE522BA887FB0095B808 /* Model */,
 				E419EE332BA5E52E0095B808 /* CloakApp.swift */,
-				E419EE352BA5E52E0095B808 /* ContentView.swift */,
+				E419EE512BA887D90095B808 /* Views */,
 				E419EE372BA5E52F0095B808 /* Assets.xcassets */,
 				E419EE3C2BA5E52F0095B808 /* Cloak.entitlements */,
 				E419EE392BA5E52F0095B808 /* Preview Content */,
@@ -67,6 +88,42 @@
 				E419EE3A2BA5E52F0095B808 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E419EE512BA887D90095B808 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E419EE442BA737B40095B808 /* MenuHandler.swift */,
+				E419EE352BA5E52E0095B808 /* ContentView.swift */,
+				E419EE4D2BA869000095B808 /* PNGView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E419EE522BA887FB0095B808 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E419EE4F2BA87B0F0095B808 /* ImageData.swift */,
+				E419EE422BA6105E0095B808 /* ModelData.swift */,
+				E419EE542BA8C3890095B808 /* FileData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E419EE532BA8881C0095B808 /* PNG */ = {
+			isa = PBXGroup;
+			children = (
+				E419EE4B2BA74D5F0095B808 /* PNGHandler.swift */,
+			);
+			path = PNG;
+			sourceTree = "<group>";
+		};
+		E419EE562BA8C6790095B808 /* File */ = {
+			isa = PBXGroup;
+			children = (
+				E419EE572BA8C69A0095B808 /* FileHandler.swift */,
+			);
+			path = File;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,6 +142,10 @@
 			dependencies = (
 			);
 			name = Cloak;
+			packageProductDependencies = (
+				E419EE472BA74C7A0095B808 /* LZ77 */,
+				E419EE492BA74C7A0095B808 /* PNG */,
+			);
 			productName = Cloak;
 			productReference = E419EE302BA5E52E0095B808 /* Cloak.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +174,9 @@
 				Base,
 			);
 			mainGroup = E419EE272BA5E52E0095B808;
+			packageReferences = (
+				E419EE462BA74C7A0095B808 /* XCLocalSwiftPackageReference "../../swift-png" */,
+			);
 			productRefGroup = E419EE312BA5E52E0095B808 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,8 +203,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E419EE4C2BA74D5F0095B808 /* PNGHandler.swift in Sources */,
 				E419EE362BA5E52E0095B808 /* ContentView.swift in Sources */,
+				E419EE4E2BA869000095B808 /* PNGView.swift in Sources */,
+				E419EE582BA8C69A0095B808 /* FileHandler.swift in Sources */,
+				E419EE552BA8C3890095B808 /* FileData.swift in Sources */,
 				E419EE342BA5E52E0095B808 /* CloakApp.swift in Sources */,
+				E419EE432BA6105E0095B808 /* ModelData.swift in Sources */,
+				E419EE452BA737B40095B808 /* MenuHandler.swift in Sources */,
+				E419EE502BA87B0F0095B808 /* ImageData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +412,24 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		E419EE462BA74C7A0095B808 /* XCLocalSwiftPackageReference "../../swift-png" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../../swift-png";
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E419EE472BA74C7A0095B808 /* LZ77 */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LZ77;
+		};
+		E419EE492BA74C7A0095B808 /* PNG */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PNG;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E419EE282BA5E52E0095B808 /* Project object */;
 }

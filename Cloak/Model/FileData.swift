@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+struct FileData {
+    var data:       [UInt8]
+    
+    var dataLength: Int {
+        return data.count
+    }
+}

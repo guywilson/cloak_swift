@@ -28,7 +28,7 @@ func encode(path: String, data: ImageData, level: Int = 9) throws {
     try image.compress(path: path, level: level)
 }
 
-func loadImage(filePath: String) -> (NSImage, ImageData) {
+func loadImage(filePath: String) -> CloakableImage {
     var imageData: ImageData
     
     let image: NSImage = loadImageOnly(filePath: filePath)
@@ -40,7 +40,7 @@ func loadImage(filePath: String) -> (NSImage, ImageData) {
         fatalError("Failed to decode PNG image \(filePath)")
     }
 
-    return (image, imageData)
+    return CloakableImage(name: filePath, image: image, imageData: imageData)
 }
 
 func loadImageOnly(filePath: String) -> NSImage {
@@ -50,11 +50,11 @@ func loadImageOnly(filePath: String) -> NSImage {
     return image
 }
 
-func saveImageAs(filePath: String, data: ImageData) {
+func saveImageAs(image: CloakableImage) {
     do {
-        try encode(path: filePath, data: data)
+        try encode(path: image.name, data: image.imageData)
     }
     catch {
-        fatalError("Failed to encode PNG image \(filePath)")
+        fatalError("Failed to encode PNG image \(image.name)")
     }
 }

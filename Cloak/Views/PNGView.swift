@@ -24,5 +24,5 @@ struct PNGView: View {
 
 #Preview {
     let modelData = ModelData()
-    return PNGView(image: modelData.sourceImage)
+    return PNGView(image: modelData.sourceImage.image)
 }
