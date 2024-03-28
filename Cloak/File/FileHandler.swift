@@ -7,15 +7,20 @@
 
 import Foundation
 
-func loadFile(path: String) -> [UInt8]? {
-    let fileHandle: FileHandle? = FileHandle(forReadingAtPath: path)
+func loadFile(path: String) throws -> [UInt8]? {
+    let url: URL = URL(filePath: path)
+    let fileHandle: FileHandle? = try FileHandle(forReadingFrom: url)
+    
+    if fileHandle == nil {
+        fatalError("Failed to open file: \(path)")
+    }
     
     do {
         let rawData: Data? = try fileHandle?.readToEnd()
         return [UInt8](rawData!)
     }
     catch {
-        return nil
+        fatalError("Failed to read from file \(path)")
     }
 }
 

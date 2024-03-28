@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PNG
 
 @main
 struct CloakApp: App {
@@ -28,6 +29,7 @@ struct CloakApp: App {
                 Button("Open image...") {
                     modelData.sourceImage = MenuHandler().loadImageHandler()
                 }
+                
                 Button("Save image as...") {
                     modelData.sourceImage.image = MenuHandler().saveImageHandler(data: modelData.sourceImage.imageData)
                 }
@@ -36,7 +38,24 @@ struct CloakApp: App {
 
                 Button("Add file to image...") {
                     modelData.sourceFile.data = MenuHandler().loadFileHandler()
+                    
+                    let c: Cloak = Cloak()
+
+                    if modelData.sourceImage.getCapacity(modelData.securityLevel) < modelData.sourceFile.length {
+                        fatalError("File \(modelData.sourceFile.name) is too large to fit in image \(modelData.sourceImage.name)")
+                    }
+
+                    c.cloak(
+                        data: &modelData.sourceImage.imageData.data,
+                        file: modelData.sourceFile,
+                        quality: modelData.securityLevel)
+                    
+                    modelData.sourceImage.image =
+                        createImageFromRawData(
+                            imageData: &modelData.sourceImage.imageData.data,
+                            imageSize: modelData.sourceImage.imageData.size)
                 }
+                
                 Button("Extract file from image...") {
                     MenuHandler().saveFileHandler(data: modelData.sourceFile.data)
                 }

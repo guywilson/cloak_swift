@@ -14,7 +14,7 @@ struct MenuHandler {
 
     func loadImageHandler() -> CloakableImage {
         let panel = NSOpenPanel()
-        panel.allowedContentTypes = [UTType.png]
+        panel.allowedContentTypes = [UTType.png, UTType.bmp]
         panel.allowsMultipleSelection = false
         panel.canChooseDirectories = false
         panel.title = "Choose an image"
@@ -30,7 +30,7 @@ struct MenuHandler {
 
     func saveImageHandler(data: ImageData) -> NSImage {
         let panel = NSSavePanel()
-        panel.allowedContentTypes = [UTType.png]
+        panel.allowedContentTypes = [UTType.png, UTType.bmp]
         panel.title = "Save image as"
         
         if panel.runModal() == .OK {
@@ -53,7 +53,12 @@ struct MenuHandler {
         if panel.runModal() == .OK {
             let file = panel.url?.path() ?? "<none>"
             
-            return loadFile(path: file)!
+            do {
+                return try loadFile(path: file)!
+            }
+            catch {
+                fatalError("Failed to load file: \(file)")
+            }
         }
         
         return []

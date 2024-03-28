@@ -8,12 +8,9 @@
 import SwiftUI
 
 struct PNGView: View {
-    @Environment(ModelData.self) var modelData
     var image: NSImage
 
     var body: some View {
-        @Bindable var modelData = modelData
-        
         VStack {
             Image(nsImage: image)
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
@@ -23,6 +20,6 @@ struct PNGView: View {
 }
 
 #Preview {
-    let modelData = ModelData()
-    return PNGView(image: modelData.sourceImage.image)
+    let image: NSImage = NSImage()
+    return PNGView(image: image)
 }

@@ -17,9 +17,10 @@
 		E419EE4A2BA74C7A0095B808 /* PNG in Frameworks */ = {isa = PBXBuildFile; productRef = E419EE492BA74C7A0095B808 /* PNG */; };
 		E419EE4C2BA74D5F0095B808 /* PNGHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E419EE4B2BA74D5F0095B808 /* PNGHandler.swift */; };
 		E419EE4E2BA869000095B808 /* PNGView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E419EE4D2BA869000095B808 /* PNGView.swift */; };
-		E419EE502BA87B0F0095B808 /* ImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E419EE4F2BA87B0F0095B808 /* ImageData.swift */; };
-		E419EE552BA8C3890095B808 /* FileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E419EE542BA8C3890095B808 /* FileData.swift */; };
+		E419EE502BA87B0F0095B808 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = E419EE4F2BA87B0F0095B808 /* Image.swift */; };
+		E419EE552BA8C3890095B808 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = E419EE542BA8C3890095B808 /* File.swift */; };
 		E419EE582BA8C69A0095B808 /* FileHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E419EE572BA8C69A0095B808 /* FileHandler.swift */; };
+		E419EE5A2BAC516E0095B808 /* Cloak.swift in Sources */ = {isa = PBXBuildFile; fileRef = E419EE592BAC516E0095B808 /* Cloak.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,9 +34,10 @@
 		E419EE442BA737B40095B808 /* MenuHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHandler.swift; sourceTree = "<group>"; };
 		E419EE4B2BA74D5F0095B808 /* PNGHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNGHandler.swift; sourceTree = "<group>"; };
 		E419EE4D2BA869000095B808 /* PNGView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNGView.swift; sourceTree = "<group>"; };
-		E419EE4F2BA87B0F0095B808 /* ImageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageData.swift; sourceTree = "<group>"; };
-		E419EE542BA8C3890095B808 /* FileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileData.swift; sourceTree = "<group>"; };
+		E419EE4F2BA87B0F0095B808 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		E419EE542BA8C3890095B808 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		E419EE572BA8C69A0095B808 /* FileHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileHandler.swift; sourceTree = "<group>"; };
+		E419EE592BAC516E0095B808 /* Cloak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cloak.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				E419EE372BA5E52F0095B808 /* Assets.xcassets */,
 				E419EE3C2BA5E52F0095B808 /* Cloak.entitlements */,
 				E419EE392BA5E52F0095B808 /* Preview Content */,
+				E419EE592BAC516E0095B808 /* Cloak.swift */,
 			);
 			path = Cloak;
 			sourceTree = "<group>";
@@ -103,9 +106,9 @@
 		E419EE522BA887FB0095B808 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E419EE4F2BA87B0F0095B808 /* ImageData.swift */,
+				E419EE4F2BA87B0F0095B808 /* Image.swift */,
 				E419EE422BA6105E0095B808 /* ModelData.swift */,
-				E419EE542BA8C3890095B808 /* FileData.swift */,
+				E419EE542BA8C3890095B808 /* File.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -203,15 +206,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E419EE5A2BAC516E0095B808 /* Cloak.swift in Sources */,
 				E419EE4C2BA74D5F0095B808 /* PNGHandler.swift in Sources */,
 				E419EE362BA5E52E0095B808 /* ContentView.swift in Sources */,
 				E419EE4E2BA869000095B808 /* PNGView.swift in Sources */,
 				E419EE582BA8C69A0095B808 /* FileHandler.swift in Sources */,
-				E419EE552BA8C3890095B808 /* FileData.swift in Sources */,
+				E419EE552BA8C3890095B808 /* File.swift in Sources */,
 				E419EE342BA5E52E0095B808 /* CloakApp.swift in Sources */,
 				E419EE432BA6105E0095B808 /* ModelData.swift in Sources */,
 				E419EE452BA737B40095B808 /* MenuHandler.swift in Sources */,
-				E419EE502BA87B0F0095B808 /* ImageData.swift in Sources */,
+				E419EE502BA87B0F0095B808 /* Image.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -21,9 +21,9 @@ func decode(path: String) throws -> ImageData {
     return ImageData(data: rgba, size: size)
 }
 
-func encode(path: String, data: ImageData, level: Int = 9) throws {
+func encode(path: String, data: inout [PNG.RGBA<UInt8>], size: (x: Int, y: Int), level: Int = 9) throws {
     let image: PNG.Image =
-        .init(packing: data.data, size: data.size, layout: .init(format: .rgba8(palette: [], fill: nil)))
+        .init(packing: data, size: size, layout: .init(format: .rgb8(palette: [], fill: nil, key: nil)))
     
     try image.compress(path: path, level: level)
 }
@@ -51,8 +51,10 @@ func loadImageOnly(filePath: String) -> NSImage {
 }
 
 func saveImageAs(image: CloakableImage) {
+    var data: [PNG.RGBA<UInt8>] = image.imageData.data
+    
     do {
-        try encode(path: image.name, data: image.imageData)
+        try encode(path: image.name, data: &data, size: image.imageData.size)
     }
     catch {
         fatalError("Failed to encode PNG image \(image.name)")
